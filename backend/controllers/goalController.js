@@ -55,7 +55,7 @@ const deleteGoals = asyncHandler(async (req,res) => {
         throw new Error('Goal not found! ')
     }
 
-    // await Goal.deleteOne({ _id: req.params.id }); //we write id but in the database it store as _id
+    await Goal.deleteOne({ _id: req.params.id }); //we write id but in the database it store as _id
     // await goal.remove() deprecated in Mongoose 6 
     res.status(200).json({id: req.params.id})
 })
